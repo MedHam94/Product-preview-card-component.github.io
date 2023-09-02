@@ -5,8 +5,8 @@
   --dark-grayish-blue: hsl(228, 12%, 48%);
   --white: hsl(0, 0%, 100%);
 
-  --p-font-family: 'Fraunces', serif;
-  --title-font-family: 'Montserrat', sans-serif;
+  --title-font-family: 'Fraunces', serif;
+  --p-font-family: 'Montserrat', sans-serif;
 }
 
 *{
@@ -30,7 +30,7 @@ body{
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   width: 450px;
-  max-width: 100%;
+  max-width: 95%;
   border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -38,11 +38,13 @@ body{
   -o-border-radius: 15px;
   background-color: var(--white);
   overflow: hidden;
-  margin: 5%;
 }
 
 .parfum-image img{
   max-width: 100%;
+}
+.parfum-image img:last-child{
+  display: none;
 }
 
 .content{
@@ -50,7 +52,97 @@ body{
 }
 
 .content h5{
-  font-family: var(--title-font-family);
+  font-family: var(--p-font-family);
   color: var(--dark-grayish-blue);
-  word-spacing: 3px;
+  letter-spacing: 3px;
+  font-weight: 500;
+  font-size: 18px;
+  padding: 0 0 10px;
+}
+
+.content h1{
+  font-size: 2.6rem;
+  line-height: 1;
+  font-family: var(--title-font-family);
+}
+
+.content > p{
+  font-family: var(--p-font-family);
+  color: var(--dark-grayish-blue);
+  padding: 15px 0;
+  line-height: 1.6;
+  font-size: 14px;
+}
+.price{
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+}
+.price p{
+  display: inline-block;
+  font-family: var(--p-font-family);
+  text-decoration: line-through;
+  color: var(--dark-grayish-blue);
+  
+}
+
+.price p:first-child{
+  color: var(--dark-cyan);
+  font-family: var(--title-font-family);
+  font-size: 2.5rem;
+  text-decoration: none;
+  padding-right: 15px;
+
+}
+
+.btn{
+  display: flex;
+  background: var(--dark-cyan);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  padding: 22px 0;
+  justify-content: center;
+  align-items: center;
+  
+}
+.btn a{
+  color: white;
+  text-decoration: none;
+  font-family: var(--p-font-family);
+  font-weight: 700;
+}
+
+.btn img{
+  padding-right: 9px;
+  width: 20px;
+  
+}
+
+@media screen and (min-width: 600px) {
+
+  .container{
+    display: flex;
+    max-width: 90%;
+    width: 750px;
+  }
+  .parfum-image{
+    flex-basis: 50%;
+  }
+
+  .parfum-image img:first-child{
+    display: none;
+
+  }
+  .parfum-image img:last-child{
+    display: block;
+    max-width: 100%;
+    min-height: 100%;
+  }
+
+  .content{
+    flex-basis: 50%;
+  }
 }
